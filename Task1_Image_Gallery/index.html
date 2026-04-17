@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Image Gallery</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="header-row">
+          <div class="brand">
+            <h1>Image Gallery</h1>
+            <p class="subtitle">Responsive grid with filters and a lightbox.</p>
+          </div>
+
+          <div class="controls">
+            <div class="filters" role="group" aria-label="Category filters">
+              <button class="chip is-active" type="button" data-filter="all">All</button>
+              <button class="chip" type="button" data-filter="nature">Nature</button>
+              <button class="chip" type="button" data-filter="cars">Cars</button>
+              <button class="chip" type="button" data-filter="travel">Travel</button>
+            </div>
+
+            <div class="meta" aria-live="polite">
+              <span id="countLabel">0 photos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="gallery" aria-label="Image gallery">
+        <div id="galleryGrid" class="grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <div class="lightbox__backdrop" data-close></div>
+      <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button class="icon-btn lightbox__close" type="button" aria-label="Close" data-close>
+          ✕
+        </button>
+
+        <button class="icon-btn lightbox__nav lightbox__prev" type="button" aria-label="Previous image">
+          ‹
+        </button>
+
+        <figure class="lightbox__figure">
+          <div class="lightbox__media">
+            <img id="lightboxImg" alt="" />
+          </div>
+          <figcaption class="lightbox__caption">
+            <div class="caption__title" id="lightboxTitle"></div>
+            <div class="caption__meta" id="lightboxMeta"></div>
+          </figcaption>
+        </figure>
+
+        <button class="icon-btn lightbox__nav lightbox__next" type="button" aria-label="Next image">
+          ›
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
